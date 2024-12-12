@@ -21,8 +21,8 @@ The infinite loop allows the shell to display "enseash %" and wait for another p
 # Step 3 - Handling the shell exit with the "exit" command or "Ctrl+d"  
 Within the 'command()' function, we add a condition allowing us to exit the program when either "exit" or "Ctrl+d" is used.  
 `if(strcmp(input,"exit") == 0 || bytesRead == 0){   
-        write(terminal,exitSucesss,sizeof(exitSucesss));
-        exit(EXIT_SUCCESS);
+        write(terminal,exitSucesss,sizeof(exitSucesss));  
+        exit(EXIT_SUCCESS);  
 
     };`  
 
@@ -30,15 +30,15 @@ Within the 'command()' function, we add a condition allowing us to exit the prog
 "exit" is managed by a string comparison (strcmp), while the "Ctrl+d" management is based on the size of the buffer.  
 # Step 4 - Displaying the return code (or signal) of the previous command in the prompt  
 We use the 'sprintf()' function, formatting a string with the value of our exit code (similarly for the signal code).  
-`if (WIFEXITED(status)){
-    exit_signal_status = WEXITSTATUS(status);
-    sprintfvalue = sprintf(waitingPrompt, "enseash [exit:%d] %% ",exit_signal_status);
+`if (WIFEXITED(status)){  
+    exit_signal_status = WEXITSTATUS(status);  
+    sprintfvalue = sprintf(waitingPrompt, "enseash [exit:%d] %% ",exit_signal_status);  
 }`  
 # Step 5 - Measurement of the command execution time using the call clock_gettime  
 We can enhance the previous code by displaying the elapsed time using the "clock_gettime" function from the time library. This function serves as a timestamp to calculate Δ t .  
-`    if (WIFEXITED(status)){
-        exit_signal_status = WEXITSTATUS(status);
-        sprintfvalue = sprintf(waitingPrompt, "enseash [exit:%d|%.0f ms] %% ",exit_signal_status,time_elapsed);
+`    if (WIFEXITED(status)){  
+        exit_signal_status = WEXITSTATUS(status);  
+        sprintfvalue = sprintf(waitingPrompt, "enseash [exit:%d|%.0f ms] %% ",exit_signal_status,time_elapsed);  
     }`  
 time_elapsed in milliseconds is calculated by using this formula : $ \Delta t_{ms} = \Delta t_s+\frac{\Delta t_{ns}}{1\times10^{6}}$  
 # Step 6 - Execution of a complex command (with arguments)  
