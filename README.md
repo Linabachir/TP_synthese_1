@@ -23,8 +23,7 @@ Within the 'command()' function, we add a condition allowing us to exit the prog
 `if(strcmp(input,"exit") == 0 || bytesRead == 0){   
         write(terminal,exitSucesss,sizeof(exitSucesss));  
         exit(EXIT_SUCCESS);  
-
-    };`  
+    }; `
 
 
 "exit" is managed by a string comparison (strcmp), while the "Ctrl+d" management is based on the size of the buffer.  
