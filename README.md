@@ -42,4 +42,11 @@ We can enhance the previous code by displaying the elapsed time using the "clock
 time_elapsed in milliseconds is calculated by using this formula : $ \Delta t_{ms} = \Delta t_s+\frac{\Delta t_{ns}}{1\times10^{6}}$  
 # Step 6 - Execution of a complex command (with arguments)  
 char *token = strtok(input, " ");  
-We then store these words in an array 'args', and append a null pointer at the end of the array to prepare for command execution by replacing the 'execlp' function with the 'execvp' function.
+We then store these words in an array 'args', and append a null pointer at the end of the array to prepare for command execution by replacing the 'execlp' function with the 'execvp' function.  
+# Step 7  
+### Important Note:
+Step 7 has not been tested.
+
+Due to technical reasons and time constraints, this step has not been thoroughly tested.
+  
+
