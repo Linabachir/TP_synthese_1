@@ -20,8 +20,8 @@ The 'command()' function uses the fork process to execute commands. The executio
 The infinite loop allows the shell to display "enseash %" and wait for another prompt each time a command is executed.  
 # Step 3 - Handling the shell exit with the "exit" command or "Ctrl+d"  
 Within the 'command()' function, we add a condition allowing us to exit the program when either "exit" or "Ctrl+d" is used.  
-`if(strcmp(input,"exit") == 0 || bytesRead == 0){   
-        write(terminal,exitSucesss,sizeof(exitSucesss));  
+`if(strcmp(input,"exit") == 0 || bytesRead == 0){     
+        write(terminal,exitSucesss,sizeof(exitSucesss));    
         exit(EXIT_SUCCESS);  
     }; `
 
