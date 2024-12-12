@@ -8,4 +8,7 @@ We then use the 'write()' function, taking the file descriptor and the string we
 `write(terminal,welcomeMessage,strlen(welcomeMessage));`  
 Don't forget to close the file descriptors.  
 `close(terminal);`  
-
+## Step 2 - Execution of the entered command and return to the prompt  
+# 2.a Reading the entered command.  
+To read entered commands from the prompt, we use the 'read()' function, taking the file descriptor based on inputs:  
+`bytesRead = read(fd_input, input, sizeof(input));`  
